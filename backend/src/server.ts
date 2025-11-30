@@ -34,9 +34,8 @@ async function startServer() {
 
     console.log(`🚀 Servidor GraphQL listo en: ${url}`);
     console.log(`🌐 Acceso a la base de datos a través de Prisma.`);
-
   } catch (error) {
-    console.error("❌ Error al iniciar el servidor:", error);
+    console.error('❌ Error al iniciar el servidor:', error);
     await prisma.$disconnect();
     process.exit(1);
   }

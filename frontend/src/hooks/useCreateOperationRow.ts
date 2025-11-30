@@ -13,7 +13,9 @@ export const useCreateOperationRow = ({
   setPricingData: (data: OperationWithCosts[]) => void;
 }) => {
   const [createOperation, { data: createOperationData }] = useMutation<{ createOperation: OperationWithCosts }>(
-    CREATE_OPERATION,
+    CREATE_OPERATION, {
+      refetchQueries: ['GetOperationsWithCosts'],
+    }
   );
 
   const [newOperationName, setNewOperationName] = useState('');
