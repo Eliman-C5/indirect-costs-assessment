@@ -56,8 +56,8 @@ Web application for quoting indirect costs of industrial operations.
         - `VITE_API_URL`
 4. Set up Prisma
     - Backend: 
-        `npm run prisma:migrate`
-        `npm run prisma:seed`
+        - `npm run prisma:migrate`
+        - `npm run prisma:seed`
 5. Start the servers:
     - Backend: `npm run dev`
     - Frontend: `npm run dev`
