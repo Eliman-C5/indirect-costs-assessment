@@ -1,0 +1,44 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Plant {
+  id               String           @id @default(uuid())
+  name             String           @unique
+  indirectCosts    IndirectCost[]
+  createdAt DateTime               @default(now()) @map("created_at") @db.DateTime(0)
+  updatedAt DateTime              @default(now()) @map("updated_at") @db.DateTime(0)
+}
+
+model Operation {
+  id               String           @id @default(uuid())
+  name             String           @unique
+  indirectCosts    IndirectCost[]
+}
+
+model RangeVolume {
+  id               String           @id @default(uuid())
+  name             String           @unique
+  order            Int              @unique
+  indirectCosts    IndirectCost[]
+}
+
+model IndirectCost {
+  id             String      @id @default(uuid())
+  cost           Float
+  
+  plantId        String
+  operationId    String
+  rangeVolumeId String
+  
+  plant          Plant      @relation(fields: [plantId], references: [id])
+  operation      Operation   @relation(fields: [operationId], references: [id])
+  rangeVolume   RangeVolume @relation(fields: [rangeVolumeId], references: [id])
+  
+  @@unique([plantId, operationId, rangeVolumeId])
+}

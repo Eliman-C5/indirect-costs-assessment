@@ -1,0 +1,44 @@
+type Plant {
+    id: ID!
+    name: String!
+}
+
+type RangeVolume {
+    id: ID!
+    name: String! 
+    order: Int!  
+}
+
+type IndirectCost {
+    id: ID!
+    cost: Float!
+    rangeVolume: RangeVolume! 
+}
+
+type OperationWithCosts {
+    id: ID!
+    name: String!
+    indirectCosts: [IndirectCost!]!
+}
+
+input CostInput {
+    rangeVolumeId: ID! 
+    cost: Float!       
+}
+
+type Query {
+    getPlants: [Plant!]!
+    getRanges: [RangeVolume!]!
+    getOperationsWithCosts(plantId: ID!): [OperationWithCosts!]!
+}
+
+type Mutation {
+    createPlant(name: String!): Plant!
+    saveCosts(
+        plantId: ID!
+        operationName: String!
+        costs: [CostInput!]!
+    ): OperationWithCosts!
+    createOperation(name: String!, plantId: ID!): OperationWithCosts!
+    deleteOperation(id: ID!): Boolean!
+}
