@@ -18,9 +18,6 @@ export default function PricingTable({ plantId }: { plantId: string }) {
     setPricingData(operationsWithCosts);
   }, [operationsWithCosts]);
 
-    console.log(pricingData);
-
-
   return (
     <div className="p-8 bg-gray-50">
       <div className="sticky top-0 flex py-4 justify-end border-b border-gray-200">
