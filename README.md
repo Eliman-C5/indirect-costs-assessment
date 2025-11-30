@@ -39,7 +39,7 @@ Web application for quoting indirect costs of industrial operations.
 ## Installation
 
 ### Installation and Execution
-1. Clone the repository (git clone <url>)
+1. Clone the repository (git clone `url`)
 2. Install dependencies for each folder
     - Backend: `npm install`
     - Frontend: `npm install`
