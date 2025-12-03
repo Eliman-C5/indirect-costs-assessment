@@ -62,8 +62,6 @@ Web application for quoting indirect costs of industrial operations.
     - Backend: `npm run dev`
     - Frontend: `npm run dev`
 
-    ¡Entendido\! Aquí tienes la respuesta estructurada para la **Parte 4: Estrategia y Flujo de Git**, siguiendo las convenciones específicas que solicitaste (utilizando `git pull` para la integración) y presentada en formato Markdown, lista para anexar a tu `README.md`.
-
 -----
 
 ## Git Strategy and Workflow
